@@ -7,6 +7,7 @@
  *
  */
 
+const userName = "Daniel";
 /**
  * Exercise 2
  *
@@ -15,3 +16,5 @@
  *
  * {age} can be reassigned
  */
+
+let age = 40;
