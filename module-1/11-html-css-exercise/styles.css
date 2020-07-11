@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Caudex&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caudex&family=Forum&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+
+header h1 {
+  font-family: "Caudex", serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 3.75rem;
+}
+
+header h3 {
+  font-family: "Forum", cursive;
+  font-weight: normal;
+  font-size: 3rem;
+}
+
+.banner {
+  background: url("images/laptop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60vh;
+}
+
+figcaption {
+  font-family: "Forum", cursive;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  color: #b0665d;
+  padding: 10px;
+}
+
+section {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 50px 0;
+  margin-top: 60px;
+}
+
+section p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Forum", cursive;
+  font-size: 1.5rem;
+}
