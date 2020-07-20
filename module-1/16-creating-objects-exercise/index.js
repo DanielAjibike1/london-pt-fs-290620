@@ -7,6 +7,13 @@
  * PS: use console.log() to see the result
  */
 
+const user = {
+  firstName: "Jim",
+  lastName: "Brown",
+  age: 45,
+};
+
+console.log(user);
 /**
  * Exercise 2
  *
@@ -15,6 +22,22 @@
  *
  * PS: use console.log() to see the result
  */
+
+const allTypes = {
+  name: "Kelly",
+  age: 34,
+  siblings: ["Jane", "Billy", "Tom"],
+  location: {
+    city: "Barcelona",
+    country: "Spain",
+  },
+  nameLocale: function () {
+    return this.name + " " + this.location;
+  },
+  likesMovies: true,
+};
+
+console.log(allTypes);
 
 /**
  * Exercise 3
@@ -25,3 +48,9 @@
  *
  * PS: use console.log() to see the result
  */
+
+function createMovieObject(name, rating, ticketPrice) {
+  return { name, rating, ticketPrice };
+}
+
+console.log(createMovieObject("Home Alone", 8.5, 20));

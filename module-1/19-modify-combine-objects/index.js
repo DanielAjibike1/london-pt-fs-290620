@@ -4,12 +4,22 @@
  * Create an object {user} and add properties "firstName" and "lastName".
  */
 
+let user = {
+  firstName: "Justin",
+  lastName: "Richards",
+};
+
 /**
  * Exercise 2
  *
  * Create an object {userRead} and add properties "books" and "newspapers".
  * Both should be arrays with strings.
  */
+
+let userRead = {
+  books: ["How To Win Friends And Influence People", "Cat in the Hat"],
+  newspapers: ["Metro", "The Guardian", "Sunday Times"],
+};
 
 /**
  * Exercise 3
@@ -27,12 +37,20 @@
  * }
  */
 
+user = Object.assign(user, userRead);
+console.log(user);
+
 /**
  * Exercise 4
  *
  * Create an object {userWatch} and add properties "tvShows" and "movies".
  * Both should be arrays with strings.
  */
+
+let userWatch = {
+  tvShows: ["How To Get Away With Murder", "Revenge", "Daredevil"],
+  movies: ["The Equalizer", "Dumb and Dumber", "The Vow"],
+};
 
 /**
  * Exercise 5
@@ -54,3 +72,12 @@
  *   }
  * }
  */
+
+user = {
+  ...user,
+  userWatch: {
+    ...userWatch,
+  },
+};
+
+console.log(user);
