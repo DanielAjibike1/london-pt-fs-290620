@@ -33,14 +33,12 @@ function getAllValues(object) {
  */
 
 function getAllValuesAsString(object) {
-  let allValuesString = "";
   let allValues = "";
 
   for (const key in object) {
-    allValuesString += object[key] + " ";
-    allValues = allValuesString.trim();
+    allValues += object[key] + " ";
   }
-  return allValues;
+  return allValues.trim();
 }
 /**
  * Exercise 4
