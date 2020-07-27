@@ -9,6 +9,12 @@
  *
  */
 
+let forEach = (array, callback) => {
+  for (i = 0; i < array.length; i++) {
+    callback(array[i], i);
+  }
+};
+
 /**
  * Exercise #2
  *
@@ -22,6 +28,14 @@
  * time the callback was invoked.
  *
  */
+
+let map = (array, callback) => {
+  let newArray = [];
+  for (i = 0; i < array.length; i++) {
+    newArray.push(callback(array[i], i));
+  }
+  return newArray;
+};
 
 /**
  * Exercise #3
@@ -37,6 +51,16 @@
  *
  */
 
+let filter = (array, callback) => {
+  let newArray = [];
+  for (i = 0; i < array.length; i++) {
+    if (callback(array[i], i)) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+};
+
 /**
  * Exercise #4
  *
@@ -51,6 +75,13 @@
  *
  */
 
+let find = (array, callback) => {
+  for (i = 0; i < array.length; i++) {
+    if (callback(array[i], i)) {
+      return array[i];
+    }
+  }
+};
 /**
  * Exercise #5
  *
@@ -64,6 +95,14 @@
  * callback returns a truthy value.
  *
  */
+
+let findIndex = (array, callback) => {
+  for (i = 0; i < array.length; i++) {
+    if (callback(array[i], i)) {
+      return i;
+    }
+  }
+};
 
 /**
  * Exercise #6
@@ -80,6 +119,15 @@
  *
  */
 
+let every = (array, callback) => {
+  for (i = 0; i < array.length; i++) {
+    if (!callback(array[i], i)) {
+      return false;
+    }
+  }
+  return true;
+};
+
 /**
  * Exercise #7
  *
@@ -94,6 +142,14 @@
  * a truthy value.
  *
  */
+
+let some = (array, callback) => {
+  for (i = 0; i < array.length; i++) {
+    if (callback(array[i], i)) {
+      return true;
+    }
+  }
+};
 
 /**
  * Exercise #8
@@ -116,3 +172,11 @@
  * value.
  *
  */
+
+let reduce = (array, callback, initialValue = 0) => {
+  let cumulativeValue = initialValue;
+  for (i = 0; i < array.length; i++) {
+    cumulativeValue = callback(cumulativeValue, array[i], i);
+  }
+  return cumulativeValue;
+};
