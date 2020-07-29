@@ -4,6 +4,9 @@
  * Add Chalk(https://github.com/chalk/chalk) to your project
  */
 
+const chalk = require("chalk");
+const log = console.log;
+
 /**
  * =============================================
  * READ CHALK DOCUMENTATION TO SEE HOW TO USE IT
@@ -20,6 +23,12 @@
  * to see the result
  */
 
+const renderBlueText = () => {
+  log(chalk.blue("Hello World!!"));
+};
+
+log(renderBlueText());
+
 /**
  * Exercise 3
  *
@@ -29,6 +38,12 @@
  * to see the result
  */
 
+const inversedColourText = (input) => {
+  log(chalk.inverse(input));
+};
+
+log(inversedColourText("Hello World!"));
+
 /**
  * Exercise 4
  *
@@ -36,3 +51,9 @@
  * and style each by adding red background colour and setting
  * font colour to white.
  */
+
+const styledText = (input) => {
+  log(chalk.bgRed.white(input));
+};
+
+log(styledText(["Man", " Boy", " Franklin Saint"]));

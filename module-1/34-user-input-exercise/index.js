@@ -1,10 +1,14 @@
 // install and  import "readline-sync" npm package before you do exercises
 
+const readlineSync = require("readline-sync");
+
 /**
  * Exercise 1
  *
  * ask user for a name and assign a response to variable {name}
  */
+
+let name = readlineSync.question("What's your name? ");
 
 //===== DO NOT TOUCH THIS BLOCK =====
 console.log(`Hi ${name}!`);
@@ -24,6 +28,21 @@ console.log("=====================");
  * you get correct symbol
  */
 
+let userSign = ["+", "-", "*", "/"];
+let selectedSymbol = "";
+
+while (!selectedSymbol) {
+  const answer = readlineSync.question(
+    `Please choose an operator ${userSign}: `
+  );
+
+  if (userSign.includes(answer)) {
+    selectedSymbol = answer;
+  } else {
+    console.log("This is not a valid sign!");
+  }
+}
+console.log("You chose " + selectedSymbol);
 /**
  * Exercise 3
  *
@@ -32,6 +51,10 @@ console.log("=====================");
  * NOTE: if the user will respond with wrong value, ask again, until
  * you get a number
  */
+
+let number1 = parseInt(
+  readlineSync.questionInt("Please enter your first value: ")
+);
 
 /**
  * Exercise 4
@@ -42,6 +65,10 @@ console.log("=====================");
  * you get a number
  */
 
+let number2 = parseInt(
+  readlineSync.questionInt("Please enter your second value: ")
+);
+
 /**
  * Exercise 5
  *
@@ -50,6 +77,20 @@ console.log("=====================");
  *
  * show the result to the user
  */
+
+const calculation = (selectedSymbol, number1, number2) => {
+  if (selectedSymbol === "+") {
+    return number1 + number2;
+  } else if (selectedSymbol === "-") {
+    return number1 - number2;
+  } else if (selectedSymbol === "*") {
+    return parseInt(number1 * number2);
+  } else {
+    return parseInt(number1 / number2);
+  }
+};
+
+let result = calculation(selectedSymbol, number1, number2);
 
 console.log("=====================");
 console.log(`Here you go, the result is ${result}`);
