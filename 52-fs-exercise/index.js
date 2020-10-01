@@ -11,6 +11,16 @@
  * 2. if path is incorrect, log an error "No such file or directory"
  */
 
+const fs = require("fs");
+const createJsonFileWithContent = (data, fileName) => {
+  if (!fileName) {
+    console.log("File name is missing");
+  }
+
+  const jsonPath = `./data/${fileName}.json`;
+  fs.writeFileSync(jsonPath, JSON.stringify(data));
+};
+
 /**
  * Exercise 2
  *
@@ -23,6 +33,18 @@
  * 1. if path is incorrect, log an error "No such file or directory"
  */
 
+const readJsonFile = (fileName) => {
+  const jsonPath = `./data/${fileName}.json`;
+
+  try {
+    const readData = fs.readFileSync(jsonPath);
+    return JSON.parse(readData);
+  } catch (error) {
+    console.log("No such file or directory");
+    return null;
+  }
+};
+
 /**
  * Exercise 3
  *
@@ -31,12 +53,26 @@
  * and add it the file {./data/[fileName].json} synchronously.
  */
 
+const updateFileWithContent = (data, fileName) => {
+  const oldFile = readJsonFile(fileName);
+
+  const newFile = { ...oldFile, ...data };
+
+  createJsonFileWithContent(newFile, fileName);
+};
+
 /**
  * Exercise 4
  *
  * create a function {getFileSize} that will take {fileName} as argument and return
  * file size in bytes.
  */
+
+const getFileSize = (fileName) => {
+  const jsonFile = `./data/${fileName}.json`;
+  const { size } = fs.statSync(jsonFile);
+  return size;
+};
 
 /**
  * Exercise 5
@@ -49,6 +85,12 @@
  * if you get an error, log error message
  */
 
+const cloneJsonFile = (src, destination) => {
+  fs.copyFileSync(src, destination);
+};
+
+// Remember to add paths
+
 /**
  * Exercise 6
  *
@@ -60,3 +102,8 @@
  * if you get an error, log error message
  */
 
+const deleteFile = (src) => {
+  fs.unlinkSync(src);
+};
+
+// deleteFile("./data/testClone.json");

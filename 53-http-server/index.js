@@ -1,3 +1,6 @@
+const http = require("http");
+const { create } = require("domain");
+
 const users = [
   {
     id: 1,
@@ -17,3 +20,16 @@ const users = [
   },
 ];
 
+const createServer = () => {
+  return http.createServer((req, res) => {
+    console.log(req);
+
+    res.end();
+  });
+};
+
+const server = createServer();
+
+server.listen(3000, () => {
+  console.log("Listen on port 3000");
+});
